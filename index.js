@@ -7,7 +7,7 @@ fs.readFile('Firefox feeds backup.opml', 'utf-8', (err, data) => {
   const head_title = xmlDoc.get('/opml/head/title').text();
 
   const header = {
-    "title": head_title
+    title: head_title,
   };
 
   const outlineType = xmlDoc.find('/opml/body/outline/@type');
@@ -17,11 +17,11 @@ fs.readFile('Firefox feeds backup.opml', 'utf-8', (err, data) => {
   const outlineHtmlUrl = xmlDoc.find('/opml/body/outline/@htmlUrl');
 
   const outlines = outlineType.map((object, i) => ({
-    "type": outlineType[i].value(),
-    "title": outlineTitle[i].value(),
-    "text": outlineText[i].value(),
-    "xmlUrl": outlineXmlUrl[i].value(),
-    "htmlUrl": outlineHtmlUrl[i].value()
+    type: outlineType[i].value(),
+    title: outlineTitle[i].value(),
+    text: outlineText[i].value(),
+    xmlUrl: outlineXmlUrl[i].value(),
+    htmlUrl: outlineHtmlUrl[i].value(),
   }));
 
   const outlines_reverse = outlines.map((object, i) => {

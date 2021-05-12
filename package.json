@@ -6,7 +6,7 @@
   "author": "poyopoyo",
   "license": "MIT",
   "engines": {
-    "node": "10.x.x"
+    "node": "14.x.x"
   },
   "scripts": {
     "start": "node index.js"
